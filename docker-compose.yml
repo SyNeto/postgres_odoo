@@ -1,0 +1,16 @@
+version: '3.9'
+
+services:
+  sql:
+    image: postgres:14
+    container_name: odoo-sql
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_USER=postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - sql-data:/var/lib/postgresql/data
+
+volumes:
+  sql-data:
